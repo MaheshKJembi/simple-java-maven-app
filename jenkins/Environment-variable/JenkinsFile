@@ -1,0 +1,13 @@
+pipeline{
+    agent any
+
+    stages{
+        stage('Example'){
+            steps {
+                echo "Build number : ${env.BUILD_NUM}"
+//                sh "docker image build . -t ecr.com/webserver:${env.BUILD_NUM}"
+
+            }
+        }
+    }
+}
