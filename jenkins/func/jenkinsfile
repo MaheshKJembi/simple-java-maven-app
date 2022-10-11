@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+
+    stages{
+        stage("Demo"){
+            steps {
+                myFunc("Hello from Demo Stage!")
+                sh """
+                mvn --version
+                mvn --help
+                """
+            }
+
+        }
+
+    }
+
+}
+
+def myFunc(String myText) {
+    echo "myText is set to : ${myText}"
+}
